@@ -1,0 +1,167 @@
+@charset "utf-8";
+
+/* = Bugfix For Android
+-------------------------------------------------------------- */
+* {
+	max-height: 999999px;
+}
+
+/* = Init
+-------------------------------------------------------------- */
+html {
+	font-size: 62.5%;
+}
+body,
+input,
+textarea {
+	font-size: 1.6rem;
+	font-weight: 400;
+	line-height: 2;
+	font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+	color: #333;
+}
+body {
+	background: #fff;
+}
+
+img,iframe {
+	max-width: 100%;
+}
+
+/* = reset element style
+-------------------------------------------------------------- */
+ul,ol,li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* = Anchor
+-------------------------------------------------------------- */
+a {
+	color: inherit;
+	transition: opacity ease .2s;
+}
+a:focus {
+	outline: none;
+}
+a:link,
+a:visited {
+	color: inherit;
+	text-decoration: none;
+}
+a:active,
+a:hover {
+	text-decoration: none;
+	opacity: 0.7;
+}
+
+a.underline {
+	text-decoration: underline;
+}
+
+a.img-box {
+	max-width: 100%;
+	display: inline-block;
+	vertical-align: top;
+	transition: 0.35s opacity;
+	transition: opacity ease .2s;
+}
+
+a.tel,
+.tel a {
+	opacity: 1;
+}
+@media screen and (min-width: 768px) {
+	a.tel,
+	.tel a {
+		pointer-events: none;
+	}
+}
+
+/* = Table
+-------------------------------------------------------------- */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+	empty-cells: show;
+	border-top: 1px solid #dcdddd;
+	border-right: none;
+	border-bottom: none;
+	border-left: 1px solid #dcdddd;
+	margin: 20px 0;
+	width: 100%;
+}
+td,
+th {
+	padding: 10px;
+	border-top: none;
+	border-right: 1px solid #dcdddd;
+	border-bottom: 1px solid #dcdddd;
+	border-left: none;
+}
+th {
+	background: #efefef;
+}
+figure {
+	margin: 0;
+}
+
+/* = Input
+-------------------------------------------------------------- */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+textarea {
+	background: #f9f9f9;
+	border: 1px solid #ccc;
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	padding: 0.2em 0.5em;
+}
+
+input:hover,
+input:focus,
+textarea {
+	outline: none;
+}
+input[type="radio"]:hover,
+input[type="submit"]:hover {
+	cursor: pointer;
+}
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+select::-ms-expand {
+	display: none;
+}
+
+/* = Common Class
+-------------------------------------------------------------- */
+.img-box {
+	font-size: 0;
+	line-height: 1;
+	text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+	.sp-only {
+		display: none !important;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	html {
+		font-size: 70%;
+	}
+	.pc-only {
+		display: none !important;
+	}
+}

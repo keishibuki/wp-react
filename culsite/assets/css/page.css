@@ -1,0 +1,109 @@
+/* ============================
+	page-contact
+============================ */
+
+#contact-outline p {
+	text-align: center;
+}
+
+.contact-box .required {
+	display: inline-block;
+	background-color: #D84E3E;
+	color: #fff;
+	font-weight: 400;
+	font-size: 1.4rem;
+	line-height: 1;
+	margin: 0 0 0 20px;
+	padding: 2px 8px;
+}
+
+.contact-box input[type="text"],
+.contact-box input[type="password"],
+.contact-box input[type="email"],
+.contact-box input[type="tel"],
+.contact-box input[type="url"],
+.contact-box input[type="number"],
+.contact-box textarea {
+	box-sizing: border-box;
+}
+
+.contact-box th {
+	box-sizing: border-box;
+	width: 25%;
+}
+
+.contact-box td {
+	box-sizing: border-box;
+	width: 75%;
+}
+
+.contact-box .your-email {
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.contact-box .zip {
+	width: 150px;
+	box-sizing: border-box;
+}
+
+.contact-box .addr {
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.contact-box .your-content {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+#consent-box {
+	text-align: center;
+}
+
+#submit-box .wpcf7-response-output {
+	text-align: center;
+}
+
+#btn-submit {
+	width: 300px;
+	position: relative;
+	margin: 0 auto;
+}
+
+#btn-submit .wpcf7-submit {
+	background-color: #111;
+	color: #fff;
+	line-height: 1;
+	width: 300px;
+	padding: 16px 0;
+}
+
+#btn-submit .ajax-loader {
+	position: absolute;
+	top: calc(50% - 8px);
+}
+
+@media screen and (min-width: 768px) {
+	.contact-box th {
+		text-align: left;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.contact-box input[type="text"],
+	.contact-box input[type="password"],
+	.contact-box input[type="email"],
+	.contact-box input[type="tel"],
+	.contact-box input[type="url"],
+	.contact-box input[type="number"],
+	.contact-box textarea {
+		width: 100%;
+	}
+
+	.contact-box td,
+	.contact-box th {
+		display: block;
+		width: 100%;
+	}
+}
