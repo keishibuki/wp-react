@@ -1,10 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-export default () => {
+export default ({ max, initialStep = 1 }) => {
+  const maxStep = max;
   const formContextValues = useForm();
-  const [step, setStep] = React.useState(1);
+  const [step, setStep] = React.useState(initialStep);
   const [data, setData] = React.useState();
+
 
   const backStep = () => {
     setStep(step - 1);
@@ -21,5 +23,5 @@ export default () => {
     }));
   };
 
-  return { formContextValues, step, backStep, nextStep };
+  return { formContextValues, initialStep, step, maxStep, backStep, nextStep };
 };
