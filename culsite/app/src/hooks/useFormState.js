@@ -7,7 +7,6 @@ export default ({ max, initialStep = 1 }) => {
   const [step, setStep] = React.useState(initialStep);
   const [data, setData] = React.useState();
 
-
   const backStep = (formValues) => {
     setStep(step - 1);
     setData(prevData => ({
@@ -23,5 +22,5 @@ export default ({ max, initialStep = 1 }) => {
     }));
   };
 
-  return { formContextValues, initialStep, step, maxStep, backStep, nextStep };
+  return { data, formContextValues, initialStep, step, maxStep, backStep, nextStep };
 };

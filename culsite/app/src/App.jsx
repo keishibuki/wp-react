@@ -8,16 +8,18 @@ import Step4 from "./components/form/Step4";
 
 export default () => {
   const { brands, error } = useBrand();
-  const { formContextValues, initialStep, step, maxStep, nextStep, backStep } = useFormState({ max: 4 });
-  const { handleSubmit, getValues } = formContextValues;
+  const { data, formContextValues, initialStep, step, maxStep, nextStep, backStep } = useFormState({ max: 4 });
+  const { handleSubmit, getValues, register } = formContextValues;
+
+  if (!brands) return <div>Loading...</div>;
 
   return (
     <div>
       <form className="form">
-        {step === 1 ? <Step1 step={step} maxStep={maxStep} /> : null}
-        {step === 2 ? <Step2 step={step} maxStep={maxStep} /> : null}
-        {step === 3 ? <Step3 step={step} maxStep={maxStep} /> : null}
-        {step === 4 ? <Step4 step={step} maxStep={maxStep} /> : null}
+        {step === 1 ? <Step1 register={register} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
+        {step === 2 ? <Step2 register={register} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
+        {step === 3 ? <Step3 register={register} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
+        {step === 4 ? <Step4 register={register} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
         <div className="button">
           {step > initialStep ? <button type="button" onClick={() => backStep(getValues())}>戻る</button> : null}
           {step < maxStep ? <button type="button" onClick={() => nextStep(getValues())}>次へ</button> : null}
