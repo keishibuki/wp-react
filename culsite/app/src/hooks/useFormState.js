@@ -8,7 +8,7 @@ export default ({ max, initialStep = 1 }) => {
   const [data, setData] = React.useState();
 
 
-  const backStep = () => {
+  const backStep = (formValues) => {
     setStep(step - 1);
     setData(prevData => ({
       ...prevData,
