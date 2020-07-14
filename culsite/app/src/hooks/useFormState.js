@@ -15,11 +15,11 @@ export default ({ max, initialStep = 1 }) => {
     }));
   };
   const nextStep = (formValues) => {
-    setStep(step + 1);
     setData(prevData => ({
       ...prevData,
       ...formValues,
     }));
+    setStep(step + 1);
   };
 
   return { data, formContextValues, initialStep, step, maxStep, backStep, nextStep };
