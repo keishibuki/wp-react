@@ -20,10 +20,10 @@ export default () => {
       <div><Count from={0} to={price} /></div>
       {brands ? (
         <form className="form">
-          {step === 1 ? <Step1 register={register} price={price} setPrice={setPrice} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
-          {step === 2 ? <Step2 register={register} price={price} setPrice={setPrice} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
-          {step === 3 ? <Step3 register={register} price={price} setPrice={setPrice} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
-          {step === 4 ? <Step4 register={register} price={price} setPrice={setPrice} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
+          {step === 1 ? <Step1 register={register} setPrice={setPrice} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
+          {step === 2 ? <Step2 register={register} setPrice={setPrice} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
+          {step === 3 ? <Step3 register={register} setPrice={setPrice} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
+          {step === 4 ? <Step4 register={register} setPrice={setPrice} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
           <div className="button">
             {step > initialStep ? <button type="button" onClick={() => backStep(getValues())}>戻る</button> : null}
             {step < maxStep ? (
