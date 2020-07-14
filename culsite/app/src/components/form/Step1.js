@@ -1,7 +1,7 @@
 import React from 'react';
 import StepCounter from "../StepCounter";
 
-export default ({ register, step, maxStep, brands, data }) => {
+export default ({ register, setPrice, step, maxStep, brands, data }) => {
   return (
     <div>
       <StepCounter step={step} maxStep={maxStep} />
@@ -15,7 +15,7 @@ export default ({ register, step, maxStep, brands, data }) => {
                 value={brand.id}
                 ref={register({ required: '選択してください' })}
                 defaultChecked={(data && data.brand) ? data.brand.toString() === brand.id.toString() : false}
-                onChange={(d) => console.log(d)}
+                onChange={(e) => setPrice(Number(brand.acf.brand_price))}
               />
               <p>{brand.title.rendered}</p>
             </label>
