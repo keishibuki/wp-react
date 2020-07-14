@@ -1,7 +1,8 @@
 import React from 'react';
+import { ErrorMessage }  from '@hookform/error-message';
 import StepCounter from "../StepCounter";
 
-export default ({ register, setPrice, step, maxStep, brands, data }) => {
+export default ({ register, errors, setPrice, step, maxStep, brands, data }) => {
   return (
     <div>
       <StepCounter step={step} maxStep={maxStep} />
@@ -18,6 +19,7 @@ export default ({ register, setPrice, step, maxStep, brands, data }) => {
                 onChange={(e) => setPrice(Number(brand.acf.brand_price))}
               />
               <p>{brand.title.rendered}</p>
+              <p style={{ color: 'red' }}><ErrorMessage errors={errors} name="brand" /></p>
             </label>
           );
         })

@@ -11,7 +11,7 @@ export default () => {
   const [price, setPrice] = React.useState(0);
   const { brands, loading, error } = useBrand();
   const { data, formContextValues, initialStep, step, maxStep, nextStep, backStep } = useFormState({ max: 4 });
-  const { handleSubmit, trigger, getValues, register } = formContextValues;
+  const { handleSubmit, trigger, getValues, register, errors } = formContextValues;
 
   if (loading) return <div>Loading...</div>;
 
@@ -20,10 +20,10 @@ export default () => {
       <div><Count from={0} to={price} /></div>
       {brands ? (
         <form className="form">
-          {step === 1 ? <Step1 register={register} setPrice={setPrice} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
-          {step === 2 ? <Step2 register={register} setPrice={setPrice} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
-          {step === 3 ? <Step3 register={register} setPrice={setPrice} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
-          {step === 4 ? <Step4 register={register} setPrice={setPrice} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
+          {step === 1 ? <Step1 register={register} errors={errors} setPrice={setPrice} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
+          {step === 2 ? <Step2 register={register} errors={errors} setPrice={setPrice} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
+          {step === 3 ? <Step3 register={register} errors={errors} setPrice={setPrice} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
+          {step === 4 ? <Step4 register={register} errors={errors} setPrice={setPrice} step={step} maxStep={maxStep} brands={brands} data={data} /> : null}
           <div className="button">
             {step > initialStep ? <button type="button" onClick={() => backStep(getValues())}>戻る</button> : null}
             {step < maxStep ? (
