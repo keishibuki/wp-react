@@ -9,6 +9,8 @@ export default ({ from, to, duration = 500 }) => {
       const elapsedTime = Date.now() - startTime;
       const progress = elapsedTime / duration;
 
+      // 単調になるのでTweenMaxなどで緩急を付けたほうが良いかも
+      // フォントによってはガタガタになるので、等幅フォントを使うと良いかも
       if (progress < 1) {
         setNumber(Math.floor(from + progress * (to - from)));
       } else {
